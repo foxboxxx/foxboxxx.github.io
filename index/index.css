@@ -1,8 +1,75 @@
-#nav1 {
-    font-family: 'Quicksand', sans-serif;
+.navbar {
+    font-family: 'Nova Cut', serif;
     font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d4a373;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.nav-links {
+    text-align: center;
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+.nav-links li {
+    align-items: center;
+    margin: 0;
+}
+.nav-links a {
+    color: #264653;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+.nav-links a:hover {
+    background-color: #bc6c25;
+}
+
+.connectionholder {
     text-align: center;
 }
+.indv-links {
+    margin-bottom: 10px;
+    height: 50px;
+    width: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: 
+        height 0.3s,
+        width 0.3s,
+        padding-left 0.3s,
+        padding-right 0.3s;
+}
+.indv-links:hover {
+    height: 75px;
+    width: 75px;
+}
+
 h1 {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Nova Cut', sans-serif;
+}
+
+body {
+    background-color: #faedcd;
+}
+
+.bottom-bar {
+font-family: 'Quicksand', sans-serif;
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+background-color: #333;
+color: white;
+text-align: center;
+padding: 10px;
+box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.bottom-bar nav a:hover {
+text-decoration: underline;
 }
