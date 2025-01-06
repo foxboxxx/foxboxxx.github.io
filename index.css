@@ -1,3 +1,13 @@
+.bar {
+    background-color: #000;
+    height: 2px;
+    bottom: 1000px;
+    margin-left:20px;
+    margin-right:20px;
+    flex-grow: 1;               
+    max-width: 80%;        
+}
+
 .navbar {
     font-family: 'Nova Cut', serif;
     font-size: 24px;
@@ -9,56 +19,60 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.bar {
-    background-color: #000;
-    height: 2px;
-    bottom: 1000px;
-    margin-left:20px;
-    margin-right:20px;
-    flex-grow: 1;               /* Make the bar take up the remaining space */
-    max-width: 80%;           /* Set a maximum width to prevent the bar from becoming too wide */
-  }
-
-/* .navbar::before {
-    content: ''; 
-    position: fixed;
-    margin-left: -67.5%;
-    bottom: 1000;
-    width: 25%;
-    height: 2px;
-    background-color: #000; 
-}
-
-.navbar::after {
-    content: '';
-    position: fixed;
-    margin-left: 67.5%;
-    bottom: 1000; 
-    width: 25vw;
-    height: 2px; 
-    background-color: #000; 
-} */
-
 .nav-links {
     list-style: none;
     display: flex;
     padding-left: 5px;
     gap: 25px;
 }
+
 .nav-links li {
     align-items: center;
     margin: 0;
 }
+
 .nav-links a {
     color: #000;
     text-decoration: none;
     padding: 8px 12px;
     border-radius: 4px;
-    transition: background-color 0.5s;
+    /* transition: background-color 0.5s; */
+
+    padding: 0 .5em .25em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
 }
+
 .nav-links a:hover {
-    background-color: #bc6c25;
+    /* background-color: #bc6c25; */
+    color: #5c281e;
 }
+.nav-links a:before {
+    content: "";
+    position: absolute;
+    inset: calc(100% - 3px) 0 0 0; 
+    background: #5c281e; 
+    scale: 0 1;
+    transition: .3s, translate 0s .3s;
+}
+.nav-links a:hover:before {
+    scale: 1;
+}
+.nav-links a:hover:before {
+    translate: 0;
+    transition: .3s;
+}
+.nav-links:hover a:has(~ a:hover):before {
+    translate: 100% 0;
+    transition: .2s .2s,scale 0s .4s;
+  }
+.nav-links:hover a:hover ~ a:before {
+    translate: -100% 0;
+    transition: .2s .2s,scale 0s .4s;
+}
+
 
 .connectionholder {
     text-align: center;
@@ -81,17 +95,18 @@
     transform: scale(1.5)
 }
 
-
-
 h1 {
     font-family: 'Nova Cut', sans-serif;
     text-align: center;
+    transition: color 0.3s ease-out;
+}
+
+h1:hover {
 }
 
 body {
     background-color: #faedcd;
 }
-
 
 .bottom-bar {
     font-family: 'Nova Cut', sans-serif;
