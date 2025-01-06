@@ -14,9 +14,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-image: url(https://media1.giphy.com/media/0oYBxMzAFU3iHhsPk6/giphy.gif?cid=6c09b952i49jv94wp5dpl1iux8nujoqhirg9vz75tcu58fyo&ep=v1_gifs_search&rid=giphy.gif&ct=g);
+    background-size: cover;
+    background-position: center; */
     background-color: #d4a373;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .nav-links {
@@ -98,14 +101,33 @@
 h1 {
     font-family: 'Nova Cut', sans-serif;
     text-align: center;
-    transition: color 0.3s ease-out;
+    font-style: italic;
+    font-size: 48px;
+    margin-bottom: 20px;   
+    margin-top: 20px;
+    transition: 
+        animation 0.3s ease-out;
 }
 
 h1:hover {
+    animation: tilt-shaking 0.25s infinite;
+}
+
+@keyframes tilt-shaking {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(5deg);}
+    50% { transform: rotate(0deg);}
+    75% { transform: rotate(-5deg);}
+    100% { transform: rotate(0deg);}
 }
 
 body {
     background-color: #faedcd;
+}
+
+p {
+    font-family: 'Nova Cut', sans-serif;
+    font-size: 14px;
 }
 
 .bottom-bar {
@@ -124,3 +146,68 @@ body {
 .bottom-bar nav a:hover {
     text-decoration: underline;
 }
+
+#about-stanford {
+    transform: rotate(90deg);
+    display: block;
+    float: center;
+    height:350px;
+    width: 400px;
+    margin-top:auto;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#bio {
+    float: left;
+    /* position: absolute; */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    height: 720px;
+    width: 48.5%;
+    border-style: solid;
+}
+
+#project-highlight {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    float: left;
+    width: 48.5%;
+    height: 350px;
+    border-style: solid;
+}
+
+#skills {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    float: left;
+    /* position: absolute; */
+    height: 345px;
+    width: calc(48.5% - 350px - 20px);
+    border-style: solid;
+}
+
+#time {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
+    float:left;
+    /* position:absolute; */
+    height: 345px;
+    width: 345px;
+    border-style: solid;
+}
+
+@media screen and (max-width: 1600px) {
+    #bio {
+      width: 38.5%;
+    }
+  }
