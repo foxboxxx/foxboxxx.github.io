@@ -122,6 +122,8 @@ body {
 }
 
 p {
+    margin-top:5px;
+    margin-bottom:5px;
     font-family: 'Nova Cut', sans-serif;
     font-size: 14px;
 }
