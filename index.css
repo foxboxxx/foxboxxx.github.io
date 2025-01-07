@@ -117,6 +117,8 @@ h1:hover {
 
 body {
     background-color: #faedcd;
+    overflow-x: hidden;
+    padding-bottom: 30px;
 }
 
 p {
