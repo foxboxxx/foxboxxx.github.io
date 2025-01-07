@@ -2,10 +2,10 @@
     background-color: #000;
     height: 2px;
     bottom: 1000px;
-    margin-left:20px;
-    margin-right:20px;
-    flex-grow: 1;               
-    max-width: 80%;        
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-grow: 1;
+    max-width: 80%;
 }
 
 .navbar {
@@ -47,28 +47,33 @@
 .nav-links a:hover {
     color: #5c281e;
 }
+
 .nav-links a:before {
     content: "";
     position: absolute;
-    inset: calc(100% - 3px) 0 0 0; 
-    background: #5c281e; 
+    inset: calc(100% - 3px) 0 0 0;
+    background: #5c281e;
     scale: 0 1;
     transition: .3s, translate 0s .3s;
 }
+
 .nav-links a:hover:before {
     scale: 1;
 }
+
 .nav-links a:hover:before {
     translate: 0;
     transition: .3s;
 }
+
 .nav-links:hover a:has(~ a:hover):before {
     translate: 100% 0;
-    transition: .2s .2s,scale 0s .4s;
-  }
-.nav-links:hover a:hover ~ a:before {
+    transition: .2s .2s, scale 0s .4s;
+}
+
+.nav-links:hover a:hover~a:before {
     translate: -100% 0;
-    transition: .2s .2s,scale 0s .4s;
+    transition: .2s .2s, scale 0s .4s;
 }
 
 h1 {
@@ -76,9 +81,9 @@ h1 {
     text-align: center;
     font-style: italic;
     font-size: 48px;
-    margin-bottom: 20px;   
+    margin-bottom: 20px;
     margin-top: 20px;
-    transition: 
+    transition:
         animation 0.3s ease-out;
 }
 
@@ -89,7 +94,7 @@ h1:hover {
 h3 {
     font-family: 'Nova Cut', sans-serif;
     font-style: italic;
-    text-decoration:underline;
+    text-decoration: underline;
     text-align: center;
     font-size: 24px;
     margin-bottom: 5px;
@@ -97,11 +102,25 @@ h3 {
 }
 
 @keyframes tilt-shaking {
-    0% { transform: rotate(0deg);}
-    25% { transform: rotate(5deg);}
-    50% { transform: rotate(0deg);}
-    75% { transform: rotate(-5deg);}
-    100% { transform: rotate(0deg);}
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 body {
@@ -111,8 +130,8 @@ body {
 }
 
 p {
-    margin-top:5px;
-    margin-bottom:5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     font-family: 'Nova Cut', sans-serif;
     font-size: 14px;
 }
@@ -136,68 +155,72 @@ p {
 
 * {
     box-sizing: border-box;
-  }
-
-.content:hover {
-    transform: scale(1.02)
 }
 
 .row {
     margin: 8px -16px;
-  }
-  
-  .row,
-  .row > .column {
+}
+
+.row,
+.row>.column {
     padding: 8px;
-  }
-  
-  .column {
+}
+
+.column {
     float: left;
     width: 33%;
-  }
-  
-  .row:after {
+}
+
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
-  
-  .content {
-    background-color: #D2B48C ;
+}
+
+.content {
+    background-color: #D2B48C;
     padding: 10px;
     transition: transform 0.3s ease;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
-  }
+}
 
-  .showcase {
+.content:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.showcase {
     width: 33%;
-    aspect-ratio: 1/1; 
+    aspect-ratio: 1/1;
     object-fit: fill;
 }
+
 .clickable-icon {
     text-align: center;
 }
-.clickable-icon img{
+
+.clickable-icon img {
     margin-right: 7.5px;
     margin-left: 7.5px;
     height: 24px;
     width: 24px;
     transition: transform 0.3s ease;
 }
+
 .clickable-icon img:hover {
     transform: scale(1.2);
 }
-  
-  /* Responsive layout - makes a two column-layout instead of four columns */
-  @media screen and (max-width: 1200px) {
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 1200px) {
     .column {
-      width: 100%;
+        width: 100%;
     }
-  }
-  
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 750px) {
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 750px) {
     .column {
-      width: 100%;
+        width: 100%;
     }
-  }
+}
