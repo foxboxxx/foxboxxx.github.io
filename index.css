@@ -201,3 +201,10 @@ p {
       width: 38.5%;
     }
   }
+
+h2 {
+    font-family: 'Nova Cut', sans-serif;
+    text-align: center;
+    font-size: 96px;
+    margin-top: 200px;
+}
