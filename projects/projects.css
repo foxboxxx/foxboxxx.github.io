@@ -1,0 +1,224 @@
+.bar {
+    background-color: #000;
+    height: 2px;
+    bottom: 1000px;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-grow: 1;
+    max-width: 80%;
+}
+
+.navbar {
+    font-family: 'Nova Cut', serif;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d4a373;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding-left: 5px;
+    gap: 25px;
+}
+
+.nav-links li {
+    align-items: center;
+    margin: 0;
+}
+
+.nav-links a {
+    color: #000;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+
+    padding: 0 .5em .25em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #5c281e;
+}
+
+.nav-links a:before {
+    content: "";
+    position: absolute;
+    inset: calc(100% - 3px) 0 0 0;
+    background: #5c281e;
+    scale: 0 1;
+    transition: .3s, translate 0s .3s;
+}
+
+.nav-links a:hover:before {
+    scale: 1;
+}
+
+.nav-links a:hover:before {
+    translate: 0;
+    transition: .3s;
+}
+
+.nav-links:hover a:has(~ a:hover):before {
+    translate: 100% 0;
+    transition: .2s .2s, scale 0s .4s;
+}
+
+.nav-links:hover a:hover~a:before {
+    translate: -100% 0;
+    transition: .2s .2s, scale 0s .4s;
+}
+
+h1 {
+    font-family: 'Nova Cut', sans-serif;
+    text-align: center;
+    font-style: italic;
+    font-size: 48px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    transition:
+        animation 0.3s ease-out;
+}
+
+h1:hover {
+    animation: tilt-shaking 0.25s infinite;
+}
+
+h3 {
+    font-family: 'Nova Cut', sans-serif;
+    font-style: italic;
+    text-decoration: underline;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+@keyframes tilt-shaking {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+body {
+    background-color: #faedcd;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+}
+
+p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Nova Cut', sans-serif;
+    font-size: 14px;
+}
+
+.bottom-bar {
+    font-family: 'Nova Cut', sans-serif;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.bottom-bar nav a:hover {
+    text-decoration: underline;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.row {
+    margin: 8px -16px;
+}
+
+.row,
+.row>.column {
+    padding: 8px;
+}
+
+.column {
+    float: left;
+    width: 33%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.content {
+    background-color: #D2B48C;
+    padding: 10px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.content:hover {
+    transform: scale(1.02);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+.showcase {
+    width: 33%;
+    aspect-ratio: 1/1;
+    object-fit: fill;
+}
+
+.clickable-icon {
+    text-align: center;
+}
+
+.clickable-icon img {
+    margin-right: 7.5px;
+    margin-left: 7.5px;
+    height: 24px;
+    width: 24px;
+    transition: transform 0.3s ease;
+}
+
+.clickable-icon img:hover {
+    transform: scale(1.2);
+}
+
+@media screen and (max-width: 1200px) {
+    .column {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .column {
+        width: 100%;
+    }
+}
