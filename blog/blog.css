@@ -76,27 +76,6 @@
     transition: .2s .2s, scale 0s .4s;
 }
 
-.connectionholder {
-    text-align: center;
-}
-
-#linkedin {
-    border-radius: 50%;
-}
-
-.indv-links {
-    margin-bottom: 10px;
-    height: 50px;
-    width: 50px;
-    padding-left: 15px;
-    padding-right: 15px;
-    transition: transform 0.3s ease;
-}
-
-.indv-links:hover {
-    transform: scale(1.5)
-}
-
 h1 {
     font-family: 'Nova Cut', sans-serif;
     text-align: center;

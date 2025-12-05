@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="answer">Loading...</div>
+
+        <script>
+        const today = new Date().toISOString().split("T")[0];
+
+        const url = `https://www.nytimes.com/svc/wordle/v2/${today}.json`;
+
+        // 3. Fetch Wordle JSON and display only the "solution"
+        fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("answer").textContent = data.solution;
+        })
+        .catch(err => {
+            document.getElementById("answer").textContent = "Error loading Wordle answer";
+            console.error(err);
+        });
+        </script>
+    </body>
+</html>
