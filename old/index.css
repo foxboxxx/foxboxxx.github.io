@@ -1,0 +1,292 @@
+.bar {
+    background-color: #000;
+    height: 2px;
+    bottom: 1000px;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-grow: 1;
+    max-width: 80%;
+}
+
+.navbar {
+    font-family: 'Nova Cut', serif;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d4a373;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding-left: 5px;
+    gap: 25px;
+}
+
+.nav-links li {
+    align-items: center;
+    margin: 0;
+}
+
+.nav-links a {
+    color: #000;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+
+    padding: 0 .5em .25em;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #5c281e;
+}
+
+.nav-links a:before {
+    content: "";
+    position: absolute;
+    inset: calc(100% - 3px) 0 0 0;
+    background: #5c281e;
+    scale: 0 1;
+    transition: .3s, translate 0s .3s;
+}
+
+.nav-links a:hover:before {
+    scale: 1;
+}
+
+.nav-links a:hover:before {
+    translate: 0;
+    transition: .3s;
+}
+
+.nav-links:hover a:has(~ a:hover):before {
+    translate: 100% 0;
+    transition: .2s .2s, scale 0s .4s;
+}
+
+.nav-links:hover a:hover~a:before {
+    translate: -100% 0;
+    transition: .2s .2s, scale 0s .4s;
+}
+
+.connectionholder {
+    text-align: center;
+}
+
+#linkedin {
+    border-radius: 50%;
+}
+
+.indv-links {
+    margin-bottom: 10px;
+    height: 50px;
+    width: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    filter: brightness(0%);
+    transition: transform 0.3s ease;
+}
+
+.indv-links:hover {
+    transform: scale(1.5)
+}
+
+h1 {
+    font-family: 'Nova Cut', sans-serif;
+    text-align: center;
+    font-style: italic;
+    font-size: 48px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    transition:
+        animation 0.3s ease-out;
+}
+
+h1:hover {
+    animation: tilt-shaking 0.25s infinite;
+}
+
+@keyframes tilt-shaking {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+body {
+    min-width: 1000px;
+    background-color: #faedcd;
+    overflow-x: hidden;
+    padding-bottom: 30px;
+}
+
+p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-family: 'Nova Cut', sans-serif;
+    font-size: 14px;
+}
+
+.bottom-bar {
+    font-family: 'Nova Cut', sans-serif;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.bottom-bar nav a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 1600px) {
+    #bio {
+        width: 38.5%;
+    }
+}
+
+#content {
+    text-align: center;
+}
+
+#splash {
+    & {
+        position: relative;
+        display: inline-block;
+        font-family: 'Nova Cut', sans-serif;
+        text-align: center;
+        font-size: 96px;
+        margin-top: 200px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 6px;
+        border-radius: 4px;
+        background-color: #000;
+        bottom: 0;
+        left: 0;
+        transform-origin: right;
+        transform: scaleX(0);
+        transition: transform .3s ease-in-out;
+    }
+
+    &:hover::before {
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+
+}
+
+#cursor {
+    display: inline-block;
+    animation: blink 0.7s step-end infinite;
+    text-align: center;
+    font-size: 96px;
+    margin-top: 200px;
+    color: #5c281e;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        color: red;
+    }
+
+    25% {
+        color: orange;
+    }
+
+    50% {
+        color: yellow;
+    }
+
+    75% {
+        color: orange;
+    }
+
+    100% {
+        color: red;
+    }
+}
+#about-me {
+    & {
+        position: fixed;
+        top:20%;
+        left:0%;
+        padding: 0 0;
+        width: 400px;
+        transform: rotate(-10deg);
+        transition: transform 0.3s ease;
+    }
+
+    &:hover {
+        transform: scale(1.2) rotate(-10deg);
+    }
+}
+
+#skills {
+    & {
+        position: fixed;
+        top:40%;
+        left:70%;
+        padding: 0 0;
+        width: 400px;
+        transform: rotate(5deg);
+        transition: transform 0.3s ease;
+    }
+
+    &:hover {
+        transform: scale(1.2) rotate(5deg);
+    }
+}
+
+#featured-project {
+    & {
+        position: fixed;
+        top: 60%;
+        left: 20%;
+        padding: 0 0;
+        width: 400px;
+        transform: rotate(0deg);
+        transition: transform 0.3s ease;
+    }
+
+    &:hover {
+        transform: scale(1.2) rotate(0deg);
+    }
+}

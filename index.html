@@ -1,73 +1,277 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>joe robertazzi portfolio</title>
-    <link rel="stylesheet" href="index.css" />
-    <link
-      rel="icon"
-      href="https://cdn-icons-png.flaticon.com/512/2595/2595138.png"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nova+Cut&family=Quicksand:wght@300..700&display=swap"
-      rel="stylesheet"
-    />
-    <script src="index.js"></script>
-  </head>
+<!DOCTYPE html>
+<html lang="en">
 
-  <body onload="typewriter()">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>joe robertazzi's portfolio</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2595/2595138.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Cut&family=Quicksand:wght@300..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body onload="typewriter()">
+
     <nav class="navbar">
-      <div class="bar"></div>
-      <ul class="nav-links">
-        <li><a href="/">home</a></li>
-        <li><a href="/projects">projects</a></li>
-        <li><a href="resume/resume.pdf">resume</a></li>
-        <li><a href="/blog">blog</a></li>
-        <li><a href="/flicks">flicks</a></li>
-      </ul>
-      <div class="bar"></div>
+        <ul class="nav-links">
+            <li><a href="#home">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#projects">projects</a></li>
+            <li><a href="resume/resume.pdf" target="_blank">resume</a></li>
+        </ul>
+        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+            <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                    d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 9c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
+            </svg>
+            <svg id="moon-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                    d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+            </svg>
+        </button>
     </nav>
 
-    <h1>jofolio</h1>
+    <section id="home">
+        <div class="hero-content">
+            <div id="splash"></div>
+            <span id="cursor">|</span>
 
-    <div class="connectionholder">
-      <a href="https://www.linkedin.com/in/jtazzi"
-        ><img class="indv-links" id="linkedin" src="index/linkedin-icon.svg"
-      /></a>
-      <a href="https://www.github.com/foxboxxx"
-        ><img class="indv-links" src="index/github-icon.svg"
-      /></a>
-      <a href="mailto:tazzi@stanford.edu"
-        ><img class="indv-links" src="index/email-icon.png"
-      /></a>
-    </div>
-    <!-- <div id="bio">
+            <div class="connectionholder">
+                <a href="https://www.linkedin.com/in/jtazzi"><img class="indv-links" id="linkedin"
+                        src="index/linkedin-icon.svg" /></a>
+                <a href="https://www.github.com/foxboxxx"><img class="indv-links" src="index/github-icon.svg" /></a>
+                <a href="mailto:tazzi@stanford.edu"><img class="indv-links" src="index/email-icon.png" /></a>
+            </div>
+        </div>
 
-		</div>
-		<div id="project-highlight">
+        <a href="#about" class="scroll-down">↓</a>
+    </section>
 
-		</div>
-		<div id="skills">
+    <section id="about">
+        <h1 class="section-title">about me</h1>
 
-		</div>
-		<div id="time">
+        <div class="about-container">
+            <p class="bio-text">
+                Hi, I'm Joe, a junior at Stanford University majoring in Computer Science (Systems track), with a strong
+                interest in low-level systems programming and AI hardware design! I'm currently exploring a potential
+                minor in Mathematics or Electrical Engineering.
+            </p>
 
-		</div> -->
+            <div class="resume-wrapper">
+                <a href="resume/resume.pdf" target="_blank" class="resume-btn">
+                    <span>view full resume</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 17l9.2-9.2M17 17V7H7" />
+                    </svg>
+                </a>
+            </div>
 
-    <div id="content">
-      <div id="splash"></div>
-      <span id="cursor">|</span>
-    </div>
+            <details class="accordion" open>
+                <summary>experience</summary>
+                <div class="accordion-content">
+                    <ul class="experience-list">
 
-    <!-- <img src="index/polar.png" id="about-me" />
-    <img src="index/polar.png" id="skills" />
-    <img src="index/polar.png" id="featured-project" /> -->
+                        <li class="job-item">
+                            <span class="job-role">Teaching Assistant (CS107E) <span class="job-company">@ Stanford
+                                    University</span></span>
+                            <span class="job-date">Jan 2026 - Present</span>
+                            <p class="job-desc">Section Leading for "Computer Systems from the Ground Up." Assisting
+                                students in hardware labs and holding office hours to debug bare-metal C, Assembly, and
+                                circuit logic.</p>
+                        </li>
+
+                        <li class="job-item">
+                            <span class="job-role">Teaching Assistant (CS106A/B) <span class="job-company">@ Stanford
+                                    University</span></span>
+                            <span class="job-date">Apr 2024 - Aug 2025</span>
+                            <p class="job-desc">Conducted weekly discussion sections for 10+ students. Oversaw biweekly
+                                grading sessions to provide 1-on-1 feedback and debugged student code during office
+                                hours.</p>
+                        </li>
+
+                        <li class="job-item">
+                            <span class="job-role">Embedded Systems Intern <span class="job-company">@ Stanford
+                                    University</span></span>
+                            <span class="job-date">Jun 2025 - Aug 2025</span>
+                            <p class="job-desc">Developed and optimized drivers for I2C, I2S, SPI, and DMA, integrating
+                                12+ peripherals. Redesigned APIs into a consistent HAL and extended the MangoPi platform
+                                for RISC-V.</p>
+                        </li>
+
+                        <li class="job-item">
+                            <span class="job-role">Student Researcher <span class="job-company">@ University of
+                                    Rochester</span></span>
+                            <span class="job-date">Jan 2021 - Jun 2023</span>
+                            <p class="job-desc">Analyzed 50M+ data points investigating Earth’s magnetic field and bird
+                                migration. Created geographic visualizations using Python (Pandas, Seaborn) and
+                                presented findings at national competitions.</p>
+                        </li>
+
+                    </ul>
+                </div>
+            </details>
+            <details class="accordion">
+                <summary>relevant coursework</summary>
+                <div class="accordion-content">
+                    <div class="tags">
+                        <span>CS107E: Computer Systems from the Ground Up</span>
+                        <span>CS140E: OS Design & Implementation</span>
+                        <span>CS111: Operating Systems Principles</span>
+                        <span>EE282: Computer Systems Architecture</span>
+                        <span>EE180: Digital Systems Architecture</span>
+                        <span>CS149: Parallel Computing</span>
+                        <span>CS217: Hardware Accelerators for ML</span>
+                        <span>EE108: Digital System Design</span>
+                        <span>EE101A: Circuits I</span>
+                        <span>CS144: Computer Networking</span>
+
+                        <span>MATH104: Applied Matrix Theory</span>
+                        <span>CS161: Design & Analysis of Algorithms</span>
+                        <span>MATH51: Linear Algebra & Diff Calculus</span>
+                        <span>CS109: Probability for CS</span>
+
+                        <span>CS248A: Computer Graphics</span>
+                        <span>CS106B/M: Programming Abstractions</span>
+                    </div>
+                </div>
+            </details>
+
+            <details class="accordion">
+                <summary>technical skills</summary>
+                <div class="accordion-content">
+                    <div class="tags">
+                        <span>C</span>
+                        <span>C++</span>
+                        <span>Python</span>
+                        <span>RISC-V Assembly</span>
+                        <span>MIPS Assembly</span>
+                        <span>Verilog</span>
+                        <span>Java</span>
+
+                        <span>CUDA</span>
+                        <span>ISPC</span>
+                        <span>AWS Tranium</span>
+                        <span>Embedded Systems</span>
+                        <span>Operating Systems</span>
+                        <span>Parallel Computing</span>
+
+                        <span>NumPy</span>
+                        <span>Pandas</span>
+                        <span>Matplotlib</span>
+                        <span>PyTorch</span>
+
+                        <span>Git</span>
+                        <span>Linux/Unix</span>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h1 class="section-title">some of my projects</h1>
+
+        <div class="project-stack">
+
+            <details class="project-row" open>
+                <summary class="project-summary">
+                    <div class="p-info">
+                        <h3>mangodoom</h3>
+                        <span class="p-tagline">Bare-metal RISC-V Port</span>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </summary>
+
+                <div class="project-details">
+                    <div class="detail-grid">
+                        <div class="detail-text">
+                            <p>Ported the classic 1993 DOOM to a bare-metal RISC-V system (MangoPi), eliminating all OS
+                                dependencies by embedding game assets directly into the binary.</p>
+                            <p>Engineered low-level drivers utilizing SPI for the LCD framebuffer and I2S for DMA-driven
+                                audio. Architected a custom C standard library (libc) from the ground up.</p>
+
+                            <div class="p-links">
+                                <a href="https://github.com/foxboxxx/mangoDOOM">View Code →</a>
+                            </div>
+                        </div>
+                        <div class="detail-images">
+                            <img src="projects/doom.jpeg" alt="MangoDoom Running">
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details class="project-row">
+                <summary class="project-summary">
+                    <div class="p-info">
+                        <h3>legonardo davinci</h3>
+                        <span class="p-tagline">Automated LEGO Image Printer</span>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </summary>
+
+                <div class="project-details">
+                    <div class="detail-grid">
+                        <div class="detail-text">
+                            <p>Designed and programmed a bare-metal device that prints user-loaded images via LEGO
+                                blocks. Developed a complete back-end in C and Python on a RISC-V MangoPi.</p>
+                            <p>Rewired and integrated sensors/motors to precisely position LEGO pieces in 4.8mm x 4.8mm
+                                slots.</p>
+
+                            <div class="p-links">
+                                <a href="https://github.com/foxboxxx/legonardo-davinci">View Code →</a>
+                                <a
+                                    href="https://drive.google.com/drive/folders/1K85u9TBoneZYjCPITP94Ezn1deumaIid?usp=share_link">View
+                                    Project Media →</a>
+                            </div>
+                        </div>
+                        <div class="detail-images">
+                            <img src="projects/legonardo.jpeg" alt="Printer Setup">
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details class="project-row">
+                <summary class="project-summary">
+                    <div class="p-info">
+                        <h3>migration & magnetism</h3>
+                        <span class="p-tagline">Data Analysis & Research</span>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </summary>
+
+                <div class="project-details">
+                    <div class="detail-grid">
+                        <div class="detail-text">
+                            <p>Conducted innovative analysis of datasets containing millions of entries to track bird
+                                migration. Developed over 100 interactive geospatial maps with PyGMT and Seaborn.</p>
+                            <p>Wrote a professional research manuscript and presented findings; won at national
+                                competitions, including Regeneron STS.</p>
+                            <div class="p-links">
+                                <a href="https://drive.google.com/file/d/1ay4Kn6LyfNchn0ElNyyfflIWQYbdH_jh/view">Read
+                                    Paper →</a>
+                            </div>
+                        </div>
+                        <div class="detail-images">
+                            <img src="projects/animation.gif" alt="Migration Map">
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+        </div>
+    </section>
 
     <footer class="bottom-bar">
-      <p>&copy; 2025 joe robertazzi. all rights reserved.</p>
+        <p>&copy; 2026 joe robertazzi. all rights reserved.</p>
     </footer>
-  </body>
-</html>
 
+    <script src="test.js"></script>
+</body>
+
+</html>
