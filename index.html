@@ -55,7 +55,7 @@
 
         <div class="about-container">
             <p class="bio-text">
-                Hi, I'm Joe, a junior at Stanford University majoring in Computer Science (Systems track), with a strong
+                Hi, I'm Joe, a junior at <b>Stanford University</b> majoring in Computer Science (Systems track), with a strong
                 interest in low-level systems programming and AI hardware design! I'm currently exploring a potential
                 minor in Mathematics or Electrical Engineering.
             </p>
@@ -259,6 +259,63 @@
                         </div>
                         <div class="detail-images">
                             <img src="projects/animation.gif" alt="Migration Map">
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+        </div>
+        <h3 class="subsection-title">coursework highlights</h3>
+
+        <div class="project-stack">
+
+            <details class="project-row">
+                <summary class="project-summary">
+                    <div class="p-info">
+                        <h3>cuda histogram optimization</h3>
+                        <span class="p-tagline">1st Place Performance (CS149)</span>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </summary>
+
+                <div class="project-details">
+                    <div class="detail-grid full-width">
+                        <div class="detail-text">
+                            <p>
+                                Developed a high-performance GPU kernel to compute histograms on an <b>NVIDIA H100</b>,
+                                achieving one of the fastest runtimes in the class (21x speedup over baseline).
+
+                            </p>
+                            <div class="p-links">
+                                <a href="https://github.com/foxboxxx/fastest-histogram-cuda">View Code →</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details class="project-row">
+                <summary class="project-summary">
+                    <div class="p-info">
+                        <h3>tcp/ip stack implementation</h3>
+                        <span class="p-tagline">Reliable Transport Layer (CS144)</span>
+                    </div>
+                    <span class="expand-icon">+</span>
+                </summary>
+
+                <div class="project-details">
+                    <div class="detail-grid full-width">
+                        <div class="detail-text">
+                            <p>
+                                Built a fully functional TCP implementation in C++ capable of communicating with real
+                                Linux TCP stacks.
+                                The system ensures reliable byte-stream delivery over unreliable networks (IP) by
+                                handling packet loss, reordering, and flow control.
+
+                            </p>
+                            <p>
+                                <i>Note: Source code is private b/c Honor Code.</i>
+                            </p>
                         </div>
                     </div>
                 </div>
