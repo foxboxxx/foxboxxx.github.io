@@ -492,3 +492,22 @@ section {
 .detail-grid.full-width .detail-text {
     max-width: 100%; 
 }
+
+.detail-images.tamagacha-crop {
+    width: 100%;
+
+    aspect-ratio: 2 / 2; 
+
+    overflow: hidden; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px; 
+}
+
+.detail-images.tamagacha-crop img {
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover; 
+}
