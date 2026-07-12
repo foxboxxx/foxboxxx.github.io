@@ -7,17 +7,24 @@
     --heading-color: #000;
     --icon-filter: brightness(0%);
     --border-color: #5c281e;
+    --shadow-color: rgba(92, 40, 30, 0.12);
+
+    --radius-sm: 10px;
+    --radius-md: 18px;
+    --radius-lg: 24px;
+    --ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 [data-theme="dark"] {
-    --bg-color: #1a1a1a;       
-    --text-color: #e0e0e0;     
-    --nav-bg: #2d2d2d;         
-    --card-bg: #333333;        
-    --accent-color: #faedcd;   
-    --heading-color: #ffffff;  
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --nav-bg: #2d2d2d;
+    --card-bg: #333333;
+    --accent-color: #faedcd;
+    --heading-color: #ffffff;
     --icon-filter: brightness(0) invert(1);
     --border-color: #faedcd;
+    --shadow-color: rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -33,9 +40,38 @@ html {
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Nova Cut', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    line-height: 1.6;
     overflow-x: hidden;
     transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+::selection {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    border: 2px solid var(--bg-color);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+    border-radius: 4px;
 }
 
 .navbar {
@@ -43,21 +79,24 @@ body {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--nav-bg);
-    border-radius: 20px;
-    padding: 10px 30px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background-color: color-mix(in srgb, var(--nav-bg) 88%, transparent);
+    backdrop-filter: blur(12px) saturate(150%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    border: 1px solid color-mix(in srgb, var(--border-color) 15%, transparent);
+    border-radius: 999px;
+    padding: 12px 32px;
+    box-shadow: 0 8px 24px var(--shadow-color);
     z-index: 1000;
     display: flex;
     align-items: center;
     width: fit-content;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 28px;
     padding: 0;
     margin: 0;
 }
@@ -65,37 +104,74 @@ body {
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
-    font-size: 1.2rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
     position: relative;
-    transition: color 0.3s;
+    padding-bottom: 2px;
+    transition: color 0.25s var(--ease);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s var(--ease);
 }
 
 .nav-links a:hover {
     color: var(--accent-color);
 }
 
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
 #theme-toggle {
     background: none;
     border: none;
     cursor: pointer;
-    margin-left: 20px;
+    margin-left: 22px;
     padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-color); 
-    transition: transform 0.3s ease, color 0.3s ease;
+    color: var(--text-color);
+    transition: transform 0.3s var(--ease), color 0.3s ease;
 }
 
 #theme-toggle svg {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
     fill: currentColor;
 }
 
 #theme-toggle:hover {
     transform: rotate(15deg) scale(1.1);
     color: var(--accent-color);
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 10px 18px;
+    }
+    .nav-links {
+        gap: 16px;
+    }
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+    #theme-toggle {
+        margin-left: 14px;
+    }
 }
 
 section {
@@ -108,11 +184,13 @@ section {
 }
 
 .section-title {
+    font-family: 'Nova Cut', sans-serif;
     font-size: 3rem;
     margin-bottom: 50px;
     font-style: italic;
     color: var(--heading-color);
     text-align: center;
+    position: relative;
 }
 
 #home {
@@ -121,11 +199,13 @@ section {
 
 #splash {
     display: inline-block;
+    font-family: 'Nova Cut', sans-serif;
     font-size: clamp(3rem, 8vw, 6rem);
     color: var(--heading-color);
 }
 
 #cursor {
+    font-family: 'Nova Cut', sans-serif;
     font-size: clamp(3rem, 8vw, 6rem);
     color: var(--accent-color);
     animation: blink 0.7s step-end infinite;
@@ -141,24 +221,30 @@ section {
     width: 40px;
     margin: 0 15px;
     filter: var(--icon-filter);
-    transition: transform 0.2s;
+    transition: transform 0.25s var(--ease), opacity 0.25s ease;
 }
 
 #linkedin {
-    border-radius: 5px; 
+    border-radius: 5px;
 }
 
 .indv-links:hover {
-    transform: scale(1.2);
+    transform: scale(1.15) translateY(-3px);
+    opacity: 0.85;
 }
 
 .scroll-down {
     margin-top: 80px;
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-decoration: none;
     color: var(--accent-color);
     animation: bounce 2s infinite;
     display: block;
+    transition: opacity 0.25s ease;
+}
+
+.scroll-down:hover {
+    opacity: 0.7;
 }
 
 @keyframes bounce {
@@ -178,25 +264,31 @@ section {
 .project-row {
     border-bottom: 1px solid var(--border-color);
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    border-radius: 0;
+    border-radius: var(--radius-md);
     padding: 0;
 }
 
 .project-row[open] {
     background-color: var(--card-bg);
-    border-radius: 20px;
+    border-radius: var(--radius-md);
     border-bottom: none;
     margin: 20px 0;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 16px 32px var(--shadow-color);
 }
 
 .project-summary {
     list-style: none;
     cursor: pointer;
-    padding: 25px 20px;
+    padding: 25px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-radius: var(--radius-md);
+    transition: background-color 0.25s var(--ease);
+}
+
+.project-row:not([open]) .project-summary:hover {
+    background-color: color-mix(in srgb, var(--accent-color) 8%, transparent);
 }
 
 .project-summary::-webkit-details-marker {
@@ -204,6 +296,7 @@ section {
 }
 
 .p-info h3 {
+    font-family: 'Nova Cut', sans-serif;
     font-size: 2rem;
     margin: 0;
     color: var(--heading-color);
@@ -253,9 +346,10 @@ section {
     display: inline-block;
     margin-right: 20px;
     color: var(--accent-color);
-    font-weight: bold;
+    font-weight: 700;
     text-decoration: none;
     border-bottom: 1px solid transparent;
+    transition: border-color 0.25s var(--ease), opacity 0.25s ease;
 }
 
 .p-links a:hover {
@@ -270,8 +364,13 @@ section {
 
 .detail-images img {
     width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 8px 20px var(--shadow-color);
+    transition: transform 0.3s var(--ease);
+}
+
+.detail-images img:hover {
+    transform: scale(1.015);
 }
 
 @media screen and (max-width: 768px) {
@@ -291,12 +390,15 @@ section {
 }
 
 .bottom-bar {
-    background-color: #333;
-    color: white;
+    background-color: var(--nav-bg);
+    color: var(--text-color);
     text-align: center;
-    padding: 15px;
+    padding: 18px;
     margin-top: auto;
     width: 100%;
+    font-size: 0.9rem;
+    opacity: 0.85;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .resume-wrapper {
@@ -310,26 +412,27 @@ section {
     align-items: center;
     gap: 10px;
     padding: 12px 25px;
-    
+
     border: 2px solid var(--accent-color);
+    border-radius: var(--radius-sm);
     background-color: transparent;
     color: var(--text-color);
-    
+
     font-family: 'Courier New', Courier, monospace;
     font-size: 1.1rem;
     font-weight: bold;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s var(--ease);
 }
 
 .resume-btn svg {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s var(--ease);
 }
 
 .resume-btn:hover {
     background-color: var(--accent-color);
-    color: var(--bg-color); 
-    box-shadow: 4px 4px 0px rgba(0,0,0,0.2); 
+    color: var(--bg-color);
+    box-shadow: 3px 3px 0px var(--shadow-color);
     transform: translate(-2px, -2px);
 }
 
@@ -354,22 +457,28 @@ section {
 
 .accordion[open] {
     background-color: var(--card-bg);
-    border-radius: 4px; 
+    border-radius: var(--radius-md);
     border-bottom: none;
     margin: 15px 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 12px 28px var(--shadow-color);
 }
 
 .accordion summary {
-    padding: 20px 20px;
+    padding: 20px 22px;
     cursor: pointer;
     font-size: 1.2rem;
-    font-weight: bold;
+    font-weight: 700;
     list-style: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: var(--heading-color);
+    border-radius: var(--radius-md);
+    transition: background-color 0.25s var(--ease);
+}
+
+.accordion:not([open]) summary:hover {
+    background-color: color-mix(in srgb, var(--accent-color) 8%, transparent);
 }
 
 .accordion summary::after {
@@ -460,22 +569,24 @@ section {
 .tags span {
     border: 1px solid var(--accent-color);
     color: var(--text-color);
-    padding: 6px 12px;
-    
-    border-radius: 0px; 
-    font-family: 'Courier New', Courier, monospace; 
-    font-size: 0.9rem;
-    background-color: rgba(0,0,0,0.03); 
-    transition: all 0.2s ease;
+    padding: 6px 14px;
+
+    border-radius: 999px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.85rem;
+    background-color: color-mix(in srgb, var(--accent-color) 6%, transparent);
+    transition: all 0.2s var(--ease);
 }
 
 .tags span:hover {
     background-color: var(--accent-color);
     color: var(--bg-color);
+    transform: translateY(-2px);
     cursor: default;
 }
 
 .subsection-title {
+    font-family: 'Nova Cut', sans-serif;
     font-size: 1.5rem;
     color: var(--text-color);
     margin-top: 60px;
@@ -496,13 +607,13 @@ section {
 .detail-images.tamagacha-crop {
     width: 100%;
 
-    aspect-ratio: 2 / 2; 
+    aspect-ratio: 2 / 2;
 
-    overflow: hidden; 
-    display: flex; 
+    overflow: hidden;
+    display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 4px; 
+    border-radius: var(--radius-sm);
 }
 
 .detail-images.tamagacha-crop img {
