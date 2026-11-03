@@ -555,13 +555,50 @@ section {
 }
 
 @media screen and (max-width: 600px) {
+    .side-nav {
+        gap: 6px 16px;
+    }
+    .side-nav a {
+        font-size: 0.95rem;
+    }
+
+    /* stack title and date tightly instead of wrapping with a big gap */
+    .row-head {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    /* project cards become compact rows: square thumbnail + text */
     .card-grid {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
+    .card,
     .card.featured {
-        flex-direction: column;
+        flex-direction: row;
+        align-items: center;
     }
+    .card .card-img,
     .card.featured .card-img {
-        width: 100%;
+        width: 96px;
+        height: 96px;
+        min-height: 0;
+        aspect-ratio: 1;
+        flex-shrink: 0;
+    }
+    .card .diagram {
+        padding: 0;
+    }
+    .card .diagram pre {
+        transform: scale(0.34);
+    }
+    .card-body {
+        padding: 10px 14px;
+    }
+    .card-name {
+        font-size: 1.15rem;
+    }
+    .card-tagline {
+        font-size: 0.85rem;
     }
 }
