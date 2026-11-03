@@ -9,392 +9,318 @@
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2595/2595138.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nova+Cut&family=Quicksand:wght@300..700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Cut&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
         rel="stylesheet">
 </head>
 
 <body onload="typewriter()">
 
-    <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="#home">home</a></li>
-            <li><a href="#about">about</a></li>
-            <li><a href="#projects">projects</a></li>
-            <li><a href="resume/resume.pdf" target="_blank">resume</a></li>
-        </ul>
-        <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
-            <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 9c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
-            </svg>
-            <svg id="moon-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path
-                    d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
-            </svg>
-        </button>
-    </nav>
+    <div class="layout">
 
-    <section id="home">
-        <div class="hero-content">
-            <div id="splash"></div>
-            <span id="cursor">|</span>
+        <aside class="side">
+            <div class="side-inner">
+                <h1 class="side-title"><span id="splash"></span><span id="cursor">|</span></h1>
+                <p class="side-bio">
+                    Senior in CS (Systems) + EE minor and coterminal M.S. student in CS at <b>Stanford</b>.
+                    I work on low-level systems, operating systems, and hardware acceleration for AI.
+                </p>
 
-            <div class="connectionholder">
-                <a href="https://www.linkedin.com/in/jtazzi"><img class="indv-links" id="linkedin"
-                        src="index/linkedin-icon.svg" /></a>
-                <a href="https://www.github.com/foxboxxx"><img class="indv-links" src="index/github-icon.svg" /></a>
-                <a href="mailto:tazzi@stanford.edu"><img class="indv-links" src="index/email-icon.png" /></a>
+                <nav class="side-nav">
+                    <a href="#experience">experience</a>
+                    <a href="#projects">projects</a>
+                    <a href="#education">education</a>
+                    <a href="resume/resume.pdf" target="_blank">resume ↗</a>
+                </nav>
+
+                <div class="side-footer">
+                    <div class="icon-links">
+                        <a href="https://www.linkedin.com/in/jtazzi" aria-label="LinkedIn"><img class="indv-links"
+                                id="linkedin" src="index/linkedin-icon.svg" alt="" /></a>
+                        <a href="https://www.github.com/foxboxxx" aria-label="GitHub"><img class="indv-links"
+                                src="index/github-icon.svg" alt="" /></a>
+                        <a href="mailto:tazzi@stanford.edu" aria-label="Email"><img class="indv-links"
+                                src="index/email-icon.png" alt="" /></a>
+                    </div>
+                    <button id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+                        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path
+                                d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 9c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z" />
+                        </svg>
+                        <svg id="moon-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9c0-.46-.04-.92-.1-1.36-.98 1.37-2.58 2.26-4.4 2.26-3.03 0-5.5-2.47-5.5-5.5 0-1.82.89-3.42 2.26-4.4-.44-.06-.9-.1-1.36-.1z" />
+                        </svg>
+                    </button>
+                </div>
             </div>
+        </aside>
+
+        <main class="content">
+
+            <section id="experience">
+                <h2 class="section-title">experience</h2>
+                <ul class="timeline">
+                    <li>
+                        <div class="row-head">
+                            <span class="row-title">Platform Architecture Intern <span class="row-org">@ Apple</span></span>
+                            <span class="row-date">Jun 2026 – Sep 2026</span>
+                        </div>
+                        <p class="row-desc">Performance & Power Control.</p>
+                    </li>
+                    <li>
+                        <div class="row-head">
+                            <span class="row-title">Teaching Assistant, CS107E <span class="row-org">@ Stanford</span></span>
+                            <span class="row-date">Jan 2026 – Present</span>
+                        </div>
+                        <p class="row-desc">Section leading for "Computer Systems from the Ground Up." Help students
+                            debug bare-metal C, assembly, and circuit logic in hardware labs and office hours.</p>
+                    </li>
+                    <li>
+                        <div class="row-head">
+                            <span class="row-title">Embedded Systems Intern <span class="row-org">@ Stanford</span></span>
+                            <span class="row-date">Jun 2025 – Aug 2025</span>
+                        </div>
+                        <p class="row-desc">Wrote and optimized I2C, I2S, SPI, and DMA drivers across 12+ peripherals.
+                            Redesigned the APIs into a consistent HAL and extended the MangoPi platform for RISC-V.</p>
+                    </li>
+                    <li>
+                        <div class="row-head">
+                            <span class="row-title">Teaching Assistant, CS106A/B <span class="row-org">@ Stanford</span></span>
+                            <span class="row-date">Apr 2024 – Aug 2025</span>
+                        </div>
+                        <p class="row-desc">Led weekly sections for 10+ students, ran biweekly 1-on-1 grading sessions,
+                            and debugged student code in office hours.</p>
+                    </li>
+                    <li>
+                        <div class="row-head">
+                            <span class="row-title">Student Researcher <span class="row-org">@ University of Rochester</span></span>
+                            <span class="row-date">Jan 2021 – Jun 2023</span>
+                        </div>
+                        <p class="row-desc">Analyzed 50M+ data points on Earth's magnetic field and bird migration.
+                            Built geographic visualizations in Python and presented at national competitions.</p>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="projects">
+                <h2 class="section-title">projects</h2>
+                <p class="section-hint">click a project for details</p>
+
+                <div class="card-grid">
+                    <button class="card featured" data-detail="pidb">
+                        <div class="card-img diagram" aria-hidden="true">
+                            <pre>debugger pi          target pi
+┌──────────┐ doorbell ┌──────────┐
+│ lcd + ir │ ───────▶ │ gpio irq │
+│  menu ui │ ◀──────▶ │ jit exec │
+└──────────┘   uart   └──────────┘</pre>
+                        </div>
+                        <span class="card-body">
+                            <span class="card-name">pidb</span>
+                            <span class="card-tagline">Bare-metal runtime debugger for the Raspberry Pi</span>
+                        </span>
+                    </button>
+                    <button class="card" data-detail="tamagacha">
+                        <img class="card-img" src="projects/tamagacha.jpeg" alt="">
+                        <span class="card-body">
+                            <span class="card-name">tamagacha</span>
+                            <span class="card-tagline">Bare-metal market-driven virtual pet</span>
+                        </span>
+                    </button>
+                    <button class="card" data-detail="mangodoom">
+                        <img class="card-img" src="projects/doom.jpeg" alt="">
+                        <span class="card-body">
+                            <span class="card-name">mangodoom</span>
+                            <span class="card-tagline">Bare-metal RISC-V port</span>
+                        </span>
+                    </button>
+                    <button class="card" data-detail="legonardo">
+                        <img class="card-img" src="projects/legonardo.jpeg" alt="">
+                        <span class="card-body">
+                            <span class="card-name">legonardo davinci</span>
+                            <span class="card-tagline">Automated LEGO image printer</span>
+                        </span>
+                    </button>
+                    <button class="card" data-detail="migration">
+                        <img class="card-img" src="projects/animation.gif" alt="">
+                        <span class="card-body">
+                            <span class="card-name">migration & magnetism</span>
+                            <span class="card-tagline">Data analysis & research</span>
+                        </span>
+                    </button>
+                </div>
+
+                <h3 class="subsection-title">coursework highlights</h3>
+                <div class="card-grid">
+                    <article class="mini">
+                        <span class="card-name">cuda histogram optimization</span>
+                        <span class="card-tagline">CS149 · 1st place performance</span>
+                        <p>GPU histogram kernel on an NVIDIA H100, 21x faster than baseline.</p>
+                        <a class="text-link" href="https://github.com/foxboxxx/fastest-histogram-cuda">code →</a>
+                    </article>
+                    <article class="mini">
+                        <span class="card-name">tcp/ip stack</span>
+                        <span class="card-tagline">CS144 · reliable transport</span>
+                        <p>A C++ TCP implementation that talks to real Linux stacks, handling loss, reordering, and
+                            flow control.</p>
+                        <span class="muted">code private (honor code)</span>
+                    </article>
+                </div>
+            </section>
+
+            <section id="education">
+                <h2 class="section-title">education</h2>
+                <ul class="timeline">
+                    <li>
+                        <div class="row-head">
+                            <span class="row-title">Stanford University</span>
+                            <span class="row-date">2023 – 2028</span>
+                        </div>
+                        <p class="row-desc"><b>M.S. Computer Science</b> · expected 2028</p>
+                        <p class="row-desc"><b>B.S. Computer Science (Systems)</b>, minor in Electrical Engineering ·
+                            expected 2027</p>
+                        <div class="tags">
+                            <span>CS107E Computer Systems</span>
+                            <span>CS140E OS Design</span>
+                            <span>CS111 OS Principles</span>
+                            <span>EE282 Systems Architecture</span>
+                            <span>CS149 Parallel Computing</span>
+                            <span>CS217 Hardware Accelerators</span>
+                            <span>EE108 Digital Design</span>
+                            <span>EE180 Digital Systems Arch</span>
+                            <span>CS144 Networking</span>
+                            <span>CS248A Graphics</span>
+                            <span>CS161 Algorithms</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="row-head">
+                            <span class="row-title">Ossining High School</span>
+                            <span class="row-date">2019 – 2023</span>
+                        </div>
+                        <p class="row-desc"><b>Valedictorian</b> (1/361) · VP of Engineering Club · Varsity Track & XC</p>
+                    </li>
+                </ul>
+
+                <p class="skills-line"><span>tools</span> C · C++ · Python · RISC-V & MIPS assembly · Verilog · CUDA ·
+                    ISPC · AWS Trainium · PyTorch · NumPy · Linux · Git</p>
+            </section>
+
+            <footer class="bottom-bar">&copy; 2026 joe robertazzi</footer>
+        </main>
+    </div>
+
+    <!-- project detail panel; content is copied in from the templates below -->
+    <dialog id="detail" aria-labelledby="detail-title">
+        <button class="detail-close" aria-label="Close">×</button>
+        <div id="detail-body"></div>
+    </dialog>
+
+    <template id="detail-pidb">
+        <div class="detail-media diagram">
+            <pre>   ┌──────────────┐                        ┌──────────────┐
+   │ DEBUGGER PI  │  doorbell (GPIO 20) ─▶ │  TARGET PI   │
+   │ ST7735R LCD  │  bit-banged UART       │ GPIO irq     │
+   │ IR remote    │  TX 16 / RX 19  ◀────▶ │ handler      │
+   │ menu state   │  packet protocol       │ JIT buffer   │
+   └──────────────┘                        └──────────────┘</pre>
         </div>
+        <h3 id="detail-title">pidb</h3>
+        <span class="card-tagline">Bare-metal runtime debugger for the Raspberry Pi</span>
+        <p>A debugger for bare-metal ARM programs that have no OS, no gdbserver, and no debug port. A second
+            Raspberry Pi, wired directly to the target, takes control of the running program by hijacking a GPIO
+            interrupt.</p>
+        <p>Instead of running a command interpreter on the target, the debugger ships raw ARM machine code over a
+            bit-banged UART and the target executes it from a buffer. Arguments are patched directly into the
+            precompiled payloads, which handle memory read/write, GPIO control, fault-register inspection, and soft
+            restart.</p>
+        <p>Single-stepping works on hardware with no stepping support by using CP14 mismatch breakpoints. Everything
+            is driven from a menu on an ST7735R LCD, navigated with a hand-rolled NEC IR remote decoder.</p>
+        <div class="detail-links"><a class="text-link" href="https://github.com/foxboxxx/pidb">code →</a></div>
+    </template>
 
-        <a href="#about" class="scroll-down">↓</a>
-    </section>
-
-    <section id="about">
-        <h1 class="section-title">about me</h1>
-
-        <div class="about-container">
-            <p class="bio-text">
-                Hi, I'm Joe, a senior at <b>Stanford University</b> majoring in Computer Science (Systems Track) with a minor in 
-                Electrical Engineering. My work and interests focus heavily on low-level systems programming, operating 
-                systems design, and hardware acceleration for AI.
-            </p>
-
-            <div class="resume-wrapper">
-                <a href="resume/resume.pdf" target="_blank" class="resume-btn">
-                    <span>view full resume</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M7 17l9.2-9.2M17 17V7H7" />
-                    </svg>
-                </a>
-            </div>
-
-            <details class="accordion" open>
-                <summary>experience</summary>
-                <div class="accordion-content">
-                    <ul class="experience-list">
-
-                        <li class="job-item">
-                            <span class="job-role">Platform Architecture Intern <span class="job-company">@ Apple</span></span>
-                            <span class="job-date">Jun 2026 - Sep 2026</span>
-                            <p class="job-desc">Performance & Power Control</p>
-                        </li>
-
-                        <li class="job-item">
-                            <span class="job-role">Teaching Assistant (CS107E) <span class="job-company">@ Stanford
-                                    University</span></span>
-                            <span class="job-date">Jan 2026 - Present</span>
-                            <p class="job-desc">Section Leading for "Computer Systems from the Ground Up." Assisting
-                                students in hardware labs and holding office hours to debug bare-metal C, Assembly, and
-                                circuit logic.</p>
-                        </li>
-
-                        <li class="job-item">
-                            <span class="job-role">Embedded Systems Intern <span class="job-company">@ Stanford
-                                    University</span></span>
-                            <span class="job-date">Jun 2025 - Aug 2025</span>
-                            <p class="job-desc">Developed and optimized drivers for I2C, I2S, SPI, and DMA, integrating
-                                12+ peripherals. Redesigned APIs into a consistent HAL and extended the MangoPi platform
-                                for RISC-V.</p>
-                        </li>
-
-                        <li class="job-item">
-                            <span class="job-role">Teaching Assistant (CS106A/B) <span class="job-company">@ Stanford
-                                    University</span></span>
-                            <span class="job-date">Apr 2024 - Aug 2025</span>
-                            <p class="job-desc">Conducted weekly discussion sections for 10+ students. Oversaw biweekly
-                                grading sessions to provide 1-on-1 feedback and debugged student code during office
-                                hours.</p>
-                        </li>
-
-                        <li class="job-item">
-                            <span class="job-role">Student Researcher <span class="job-company">@ University of
-                                    Rochester</span></span>
-                            <span class="job-date">Jan 2021 - Jun 2023</span>
-                            <p class="job-desc">Analyzed 50M+ data points investigating Earth’s magnetic field and bird
-                                migration. Created geographic visualizations using Python (Pandas, Seaborn) and
-                                presented findings at national competitions.</p>
-                        </li>
-
-                    </ul>
-                </div>
-            </details>
-            <details class="accordion">
-                <summary>education</summary>
-                <div class="accordion-content">
-                    <ul class="experience-list">
-
-                        <li class="job-item">
-                            <div class="job-role">
-                                <span>Stanford University</span>
-                                <span class="job-date">Expected 2027</span>
-                            </div>
-
-                            <div class="degree-info" style="margin-bottom: 15px;">
-                                <p class="job-desc"><b>B.S. Computer Science (Systems Track)</b></p>
-                                <p class="job-desc" style="font-size: 0.95rem; opacity: 0.8; margin-top:5px;">Minor in
-                                    Electrical Engineering</p>
-                            </div>
-
-                            <div class="tags">
-                                <span>CS107E: Computer Systems (Ground Up)</span>
-                                <span>CS140E: OS Design</span>
-                                <span>CS111: OS Principles</span>
-                                <span>EE282: Computer Systems Architecture</span>
-                                <span>CS149: Parallel Computing</span>
-                                <span>CS217: Hardware Accelerators</span>
-                                <span>EE108: Digital System Design</span>
-                                <span>EE180: Digital Systems Arch</span>
-                                <span>CS144: Networking</span>
-                                <span>CS248A: Graphics</span>
-                                <span>CS161: Algorithms</span>
-                            </div>
-                        </li>
-
-                        <li class="job-item">
-                            <div class="job-role">
-                                <span>Ossining High School</span>
-                                <span class="job-date">2019 - 2023</span>
-                            </div>
-
-                            <div class="degree-info" style="margin-bottom: 15px;">
-                                <p class="job-desc"><b>High School Diploma (Valedictorian)</b></p>
-                                <p class="job-desc" style="font-size: 0.95rem; opacity: 0.8; margin-top:5px;">
-                                    Rank: 1/361 • VP of Engineering Club • Varsity Track & XC
-                                </p>
-                            </div>
-
-                            <div class="tags">
-                                <span>AP Calculus BC</span>
-                                <span>AP Computer Science</span>
-                                <span>AP Statistics</span>
-                                <span>SUNY Physics</span>
-                                <span>SUNY Chemistry</span>
-                                <span>SUNY Science Research</span>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div>
-            </details>
-
-            <details class="accordion">
-                <summary>technical skills</summary>
-                <div class="accordion-content">
-                    <div class="tags">
-                        <span>C</span>
-                        <span>C++</span>
-                        <span>Python</span>
-                        <span>RISC-V Assembly</span>
-                        <span>MIPS Assembly</span>
-                        <span>Verilog</span>
-                        <span>Java</span>
-
-                        <span>CUDA</span>
-                        <span>ISPC</span>
-                        <span>AWS Tranium</span>
-                        <span>Embedded Systems</span>
-                        <span>Operating Systems</span>
-                        <span>Parallel Computing</span>
-
-                        <span>NumPy</span>
-                        <span>Pandas</span>
-                        <span>Matplotlib</span>
-                        <span>PyTorch</span>
-
-                        <span>Git</span>
-                        <span>Linux/Unix</span>
-                    </div>
-                </div>
-            </details>
+    <template id="detail-tamagacha">
+        <img class="detail-media" src="projects/tamagacha.jpeg" alt="Tamagacha prototype">
+        <h3 id="detail-title">tamagacha</h3>
+        <span class="card-tagline">Bare-metal market-driven virtual pet</span>
+        <p>A bare-metal Tamagotchi OS for the Raspberry Pi Zero, linking the virtual pet's survival directly to live
+            Kalshi prediction market portfolios.</p>
+        <p>The hardware talks to a REST API through a custom 921600-baud UART-to-Python pipeline. Includes custom SPI
+            and bit-banged I2C drivers, and an extended FAT32 filesystem for persistent state.</p>
+        <div class="detail-links">
+            <a class="text-link" href="https://github.com/foxboxxx/tamagacha">code →</a>
+            <a class="text-link" href="https://www.youtube.com/watch?v=DrDV8Zqq3MU">demo →</a>
         </div>
-    </section>
+    </template>
 
-    <section id="projects">
-        <h1 class="section-title">some of my projects</h1>
+    <template id="detail-mangodoom">
+        <img class="detail-media" src="projects/doom.jpeg" alt="MangoDoom running">
+        <h3 id="detail-title">mangodoom</h3>
+        <span class="card-tagline">Bare-metal RISC-V port</span>
+        <p>The classic 1993 DOOM ported to a bare-metal RISC-V system (MangoPi), with every OS dependency removed by
+            embedding the game assets directly into the binary.</p>
+        <p>Low-level drivers use SPI for the LCD framebuffer and I2S for DMA-driven audio, on top of a C standard
+            library written from the ground up.</p>
+        <div class="detail-links"><a class="text-link" href="https://github.com/foxboxxx/mangoDOOM">code →</a></div>
+    </template>
 
-        <div class="project-stack">
-
-            <details class="project-row" open>
-                <summary class="project-summary">
-                    <div class="p-info">
-                        <h3>tamagacha</h3>
-                        <span class="p-tagline">Bare-metal Market-Driven Virtual Pet</span>
-                    </div>
-                    <span class="expand-icon">+</span>
-                </summary>
-
-                <div class="project-details">
-                    <div class="detail-grid">
-                        <div class="detail-text">
-                            <p>Engineered a bare-metal Tamagotchi OS for the Raspberry Pi Zero, linking the virtual pet's survival directly to live Kalshi prediction market portfolios.</p>
-                            <p>Bridged the embedded hardware to a REST API via a custom 921600-baud UART-to-Python pipeline. Developed custom SPI and bit-banged I2C drivers, and extended a FAT32 filesystem for persistent state storage.</p>
-
-                            <div class="p-links">
-                                <a href="https://github.com/foxboxxx/tamagacha">View Code →</a>
-                                <a href="https://www.youtube.com/watch?v=DrDV8Zqq3MU">View Demo →</a>
-                            </div>
-                        </div>
-                        <div class="detail-images tamagacha-crop">
-                            <img src="projects/tamagacha.jpeg" alt="Tamagacha Prototype">
-                        </div>
-                    </div>
-                </div>
-            </details>
-
-            <details class="project-row">
-                <summary class="project-summary">
-                    <div class="p-info">
-                        <h3>mangodoom</h3>
-                        <span class="p-tagline">Bare-metal RISC-V Port</span>
-                    </div>
-                    <span class="expand-icon">+</span>
-                </summary>
-
-                <div class="project-details">
-                    <div class="detail-grid">
-                        <div class="detail-text">
-                            <p>Ported the classic 1993 DOOM to a bare-metal RISC-V system (MangoPi), eliminating all OS
-                                dependencies by embedding game assets directly into the binary.</p>
-                            <p>Engineered low-level drivers utilizing SPI for the LCD framebuffer and I2S for DMA-driven
-                                audio. Architected a custom C standard library (libc) from the ground up.</p>
-
-                            <div class="p-links">
-                                <a href="https://github.com/foxboxxx/mangoDOOM">View Code →</a>
-                            </div>
-                        </div>
-                        <div class="detail-images">
-                            <img src="projects/doom.jpeg" alt="MangoDoom Running">
-                        </div>
-                    </div>
-                </div>
-            </details>
-
-            <details class="project-row">
-                <summary class="project-summary">
-                    <div class="p-info">
-                        <h3>legonardo davinci</h3>
-                        <span class="p-tagline">Automated LEGO Image Printer</span>
-                    </div>
-                    <span class="expand-icon">+</span>
-                </summary>
-
-                <div class="project-details">
-                    <div class="detail-grid">
-                        <div class="detail-text">
-                            <p>Designed and programmed a bare-metal device that prints user-loaded images via LEGO
-                                blocks. Developed a complete back-end in C and Python on a RISC-V MangoPi.</p>
-                            <p>Rewired and integrated sensors/motors to precisely position LEGO pieces in 4.8mm x 4.8mm
-                                slots.</p>
-
-                            <div class="p-links">
-                                <a href="https://github.com/foxboxxx/legonardo-davinci">View Code →</a>
-                                <a
-                                    href="https://drive.google.com/drive/folders/1K85u9TBoneZYjCPITP94Ezn1deumaIid?usp=share_link">View
-                                    Project Media →</a>
-                            </div>
-                        </div>
-                        <div class="detail-images">
-                            <img src="projects/legonardo.jpeg" alt="Printer Setup">
-                        </div>
-                    </div>
-                </div>
-            </details>
-
-            <details class="project-row">
-                <summary class="project-summary">
-                    <div class="p-info">
-                        <h3>migration & magnetism</h3>
-                        <span class="p-tagline">Data Analysis & Research</span>
-                    </div>
-                    <span class="expand-icon">+</span>
-                </summary>
-
-                <div class="project-details">
-                    <div class="detail-grid">
-                        <div class="detail-text">
-                            <p>Conducted innovative analysis of datasets containing millions of entries to track bird
-                                migration. Developed over 100 interactive geospatial maps with PyGMT and Seaborn.</p>
-                            <p>Wrote a professional research manuscript and presented findings; won at national
-                                competitions, including Regeneron STS.</p>
-                            <div class="p-links">
-                                <a href="https://drive.google.com/file/d/1ay4Kn6LyfNchn0ElNyyfflIWQYbdH_jh/view">Read
-                                    Paper →</a>
-                            </div>
-                        </div>
-                        <div class="detail-images">
-                            <img src="projects/animation.gif" alt="Migration Map">
-                        </div>
-                    </div>
-                </div>
-            </details>
-
+    <template id="detail-legonardo">
+        <img class="detail-media" src="projects/legonardo.jpeg" alt="LEGO printer setup">
+        <h3 id="detail-title">legonardo davinci</h3>
+        <span class="card-tagline">Automated LEGO image printer</span>
+        <p>A bare-metal device that prints user-loaded images in LEGO bricks, with a complete back-end in C and
+            Python on a RISC-V MangoPi.</p>
+        <p>Sensors and motors were rewired and integrated to place pieces precisely into 4.8mm × 4.8mm slots.</p>
+        <div class="detail-links">
+            <a class="text-link" href="https://github.com/foxboxxx/legonardo-davinci">code →</a>
+            <a class="text-link"
+                href="https://drive.google.com/drive/folders/1K85u9TBoneZYjCPITP94Ezn1deumaIid?usp=share_link">media →</a>
         </div>
-        <h3 class="subsection-title">coursework highlights</h3>
+    </template>
 
-        <div class="project-stack">
-
-            <details class="project-row">
-                <summary class="project-summary">
-                    <div class="p-info">
-                        <h3>cuda histogram optimization</h3>
-                        <span class="p-tagline">1st Place Performance (CS149)</span>
-                    </div>
-                    <span class="expand-icon">+</span>
-                </summary>
-
-                <div class="project-details">
-                    <div class="detail-grid full-width">
-                        <div class="detail-text">
-                            <p>
-                                Developed a high-performance GPU kernel to compute histograms on an <b>NVIDIA H100</b>,
-                                achieving one of the fastest runtimes in the class (21x speedup over baseline).
-
-                            </p>
-                            <div class="p-links">
-                                <a href="https://github.com/foxboxxx/fastest-histogram-cuda">View Code →</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </details>
-
-            <details class="project-row">
-                <summary class="project-summary">
-                    <div class="p-info">
-                        <h3>tcp/ip stack implementation</h3>
-                        <span class="p-tagline">Reliable Transport Layer (CS144)</span>
-                    </div>
-                    <span class="expand-icon">+</span>
-                </summary>
-
-                <div class="project-details">
-                    <div class="detail-grid full-width">
-                        <div class="detail-text">
-                            <p>
-                                Built a fully functional TCP implementation in C++ capable of communicating with real
-                                Linux TCP stacks.
-                                The system ensures reliable byte-stream delivery over unreliable networks (IP) by
-                                handling packet loss, reordering, and flow control.
-
-                            </p>
-                            <p>
-                                <i>Note: Source code is private b/c Honor Code.</i>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </details>
-
+    <template id="detail-migration">
+        <img class="detail-media" src="projects/animation.gif" alt="Migration map">
+        <h3 id="detail-title">migration & magnetism</h3>
+        <span class="card-tagline">Data analysis & research</span>
+        <p>Analysis of datasets with millions of entries tracking bird migration against Earth's magnetic field, with
+            over 100 interactive geospatial maps built in PyGMT and Seaborn.</p>
+        <p>Written up as a research manuscript and presented at national competitions, including Regeneron STS.</p>
+        <div class="detail-links">
+            <a class="text-link" href="https://drive.google.com/file/d/1ay4Kn6LyfNchn0ElNyyfflIWQYbdH_jh/view">paper →</a>
         </div>
-    </section>
-
-    <footer class="bottom-bar">
-        <p>&copy; 2026 joe robertazzi. all rights reserved.</p>
-    </footer>
+    </template>
 
     <script src="index.js"></script>
+    <script>
+        const detail = document.getElementById('detail');
+        const detailBody = document.getElementById('detail-body');
+
+        document.querySelectorAll('.card[data-detail]').forEach(card => {
+            card.addEventListener('click', () => {
+                const tpl = document.getElementById('detail-' + card.dataset.detail);
+                detailBody.replaceChildren(tpl.content.cloneNode(true));
+                detail.showModal();
+            });
+        });
+
+        detail.querySelector('.detail-close').addEventListener('click', () => detail.close());
+
+        // clicking the dimmed backdrop (outside the panel) closes it
+        detail.addEventListener('click', e => {
+            if (e.target === detail) detail.close();
+        });
+
+        // highlight the side nav link for the section currently on screen
+        const navLinks = document.querySelectorAll('.side-nav a[href^="#"]');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+            });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+        document.querySelectorAll('.content section').forEach(s => observer.observe(s));
+    </script>
 </body>
 
 </html>
